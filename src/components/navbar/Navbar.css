@@ -1,0 +1,102 @@
+.home{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: white;
+}
+.home-inner {
+  position: relative;
+}
+.wraper-nav {
+  position: fixed; /* Bu asosiy o‘zgarish */
+  top: 0;
+  left: 0;
+  z-index: 999 !important;
+  width: 80vw; /* 80% ekran */
+  max-width: 300px;
+  height: 100vh;
+  background-color: white;
+  padding-top: 20px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: start;
+  padding-left: 12px  ;
+  padding-top: 26px;
+}
+.navlink {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  color: #262626 !important;
+}
+.nav-list:hover .nav-link,
+.nav-list:hover .nav-link h6 {
+  color: #1372f8 !important;
+  transition: 0.5s all ease;
+}
+.active {
+  color: #1372f8 !important;
+}
+.kattaul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100% !important;
+  gap: 16px;
+  margin: 0;
+}
+.navlist-katta{
+  list-style: none;
+}
+
+.closer{
+  position: absolute;
+  right: 0;
+  margin-top: -16px;
+  margin-right: 4px;
+  font-size: 36px !important;
+}
+.minus {
+  transform: translateX(-100%) !important;
+  transition: transform 0.3s ease-in-out !important;
+}
+
+
+/* Mobile (990px dan kichik) */
+@media (max-width: 990px) {
+  .media-element {
+    display: none;
+  }
+  .kattaul{
+    display: none;
+  }
+  .dnon-sm{
+    display: none;
+  }
+}
+
+/* Desktop (990px dan katta) */
+@media (min-width: 991px) {
+  .wraper-nav{
+    display: none;
+  }
+  .burger {
+    display: none;
+  }
+  
+  
+  
+}

@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #f9f9f9 !important;
+}
+.lang-selector{
+  position: absolute;
+  top: 65px;
+  right: 80px;
+  background-color: #000000;
+  border-radius: 10px;
+  width: 200px;
+}
+.lang-btn{
+  background-color: #ffffff;
+  color: #111;
+  border: none;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 100%;
+  text-align: start !important;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  margin-bottom: 2px;
+}
