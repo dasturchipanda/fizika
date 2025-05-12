@@ -7,8 +7,11 @@ import {
   IoIosClose,
 } from "react-icons/io";
 import "./Navbar.css";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+
+  const { t } = useTranslation();
   
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -24,12 +27,12 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { path: "/", label: "Asosiy sahifa" },
-    { path: "/nazariy", label: "Nazariy darslar" },
-    { path: "/amaliy", label: "Amaliy darslar" },
-    { path: "/nazorat", label: "Nazrot ishlari" },
+    { path: "/", label: t("asosiy") },
+    { path: "/nazariy", label: t("nazariy") },
+    { path: "/amaliy", label: t("amaliy") },
+    { path: "/nazorat", label: t("nazorat") },
     { path: "/glossariy", label: "Glossariy" },
-    { path: "/reyting", label: "Leaderboard" },
+    { path: "/reyting", label: t("lider") },
   ];
 
   return (

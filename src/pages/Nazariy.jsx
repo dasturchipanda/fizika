@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../components/axios.jsx";
 import { Link } from "react-router-dom";
+import API_BASE_URL from "../components/base";
 
 const Nazariy = () => {
   const [lessons, setLessons] = useState([]);
@@ -15,8 +16,8 @@ const Nazariy = () => {
 
 
   useEffect(() => {
-    axios
-      .get("http://localhost:9000/api/nazariy")
+    api
+      .get("/nazariy")
       .then((response) => {
         setLessons(response.data); // Ma'lumotlarni state ga yozish
         setLoading(false);
@@ -50,7 +51,7 @@ const Nazariy = () => {
                 <h3>{lesson.nazariy_title}</h3>
                 <div className="d-flex flex-wrap align-items-center gap-3 my-3">
                   <a
-                    href={`http://localhost:9000${lesson.nazariy_file}`}
+                    href={`${API_BASE_URL}${lesson.nazariy_file}`}
                     target="_blank"
                     className="btn btn-primary btn-sm"
                     rel="noreferrer"

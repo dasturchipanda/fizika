@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from '../../components/axios.jsx';
+import API_BASE_URL from "../../components/base.jsx"
 
 const Tests = () => {
   const [tests, setTests] = useState([]);
@@ -20,7 +21,7 @@ const Tests = () => {
 
   const fetchTests = async () => {
     try {
-      const res = await axios.get("http://localhost:9000/api/tests");
+      const res = await api.get("/tests");
       setTests(res.data);
 
       // Unique fanlar
@@ -39,11 +40,14 @@ const Tests = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  console.log(API_BASE_URL);
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = editId
-      ? `http://localhost:9000/api/tests/${editId}`
-      : "http://localhost:9000/api/tests";
+      ? `${API_BASE_URL}/api/tests/${editId}`
+      : `${API_BASE_URL}/api/tests`;
     const method = editId ? "put" : "post";
 
     try {
@@ -70,7 +74,7 @@ const Tests = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Ushbu testni o‘chirishga ishonchingiz komilmi?")) return;
     try {
-      await axios.delete(`http://localhost:9000/api/tests/${id}`);
+      await axios.delete(`${API_BASE_URL}/api/tests/${id}`);
       setMessage("Test o‘chirildi!");
       fetchTests();
     } catch (error) {

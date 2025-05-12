@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../components/axios.jsx';
 
 const Expect = () => {
   const [lessons, setLessons] = useState([]);
@@ -22,7 +22,7 @@ const Expect = () => {
   // 🧲 Ma'lumotlarni olish
   const fetchLessons = async () => {
     try {
-      const res = await axios.get('http://localhost:9000/api/nazariy');
+      const res = await api.get('/nazariy');
       setLessons(res.data);
     } catch (err) {
       console.error(err);
@@ -46,7 +46,7 @@ const Expect = () => {
     formData.append('nazariy_file', file);
 
     try {
-      await axios.post('http://localhost:9000/api/nazariy', formData);
+      await api.post('/nazariy', formData);
       setMessage('Yangi dars muvaffaqiyatli qo‘shildi.');
       setTitle('');
       setVideo('');
@@ -63,7 +63,7 @@ const Expect = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Rostdan ham o‘chirmoqchimisiz?')) return;
     try {
-      await axios.delete(`http://localhost:9000/api/nazariy/${id}`);
+      await api.delete(`/nazariy/${id}`);
       setMessage('Dars muvaffaqiyatli o‘chirildi.');
       fetchLessons();
     } catch (err) {

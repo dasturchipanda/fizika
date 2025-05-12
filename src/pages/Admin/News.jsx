@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../../components/axios.jsx';
+
 
 const News = () => {
   const [title, setTitle] = useState('');
@@ -24,7 +25,7 @@ const News = () => {
 
     try {
       // Backendga yuborish
-      const res = await axios.post('http://localhost:9000/api/news', formData, {
+      const res = await api.post('/news', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setSuccess('✅ Yangilik muvaffaqiyatli qo‘shildi');

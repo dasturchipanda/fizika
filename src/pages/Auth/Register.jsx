@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import api from "../../components/axios.jsx";
 
 const Register = () => {
   const [user_email, setUser_email] = useState("");
@@ -17,7 +17,7 @@ const Register = () => {
 
   const sendCode = async () => {
     try {
-      await axios.post("http://localhost:9000/api/send-code", { user_email });
+      await api.post("/send-code", { user_email });
       setCodeSent(true);
       setError("Tasdiqlash kodi yuborildi!");
     } catch (err) {
@@ -33,7 +33,7 @@ const Register = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:9000/api/register", {
+      const res = await api.post("/register", {
         user_email,
         user_password,
         user_firstname: firstname,

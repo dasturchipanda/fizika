@@ -1,18 +1,11 @@
 {
-  "greeting": "test uzbek",
-  "edit-profile": "Profilni o'zgartirish",
-  "payment": "To'lovlar",
-  "news": "Yangiliklar",
-  "lang": "Til",
-  "theme": "Mavzu",
-  "checkmark": "Qanday qilib galochka olish mumkin?",
-  "support": "Adminga yozish",
-  "contact": "Redder bilan bog'lanish",
-  "logout": "Chiqish",
-  "cargo": "Cargo",
-  "cars": "Mashinalar",
-  "myCargo": "Mening yuklarim",
-  "myCar": "Mening Mashinam",
-  "profile": "Profil",
-  "change": "O'zgartirish"
+  "asosiy": "Bosh sahifa",
+  "nazariy": "Nazariy darslar",
+  "amaliy": "Amaliy mashg‘ulotlar",
+  "nazorat": "Nazorat ishi",
+  "lider": "Yetakchilar jadvali",
+  "motiv": "Fizika: tafakkur, tajriba va kashfiyot yo‘li.",
+  "motiv_text": "Oliy ta'lim muassasalari talabalari uchun ijtimoiy va axborot kompetensiyalarini rivojlantirishga xizmat qiluvchi dasturiy ta'minotni yanada takomillashtirish.",
+  "contact": "Biz bilan bog‘laning",
+  "conatct_text": "Savollaringiz bormi? Takliflaringizni eshitishga tayyormiz. Quyidagi shakl orqali bog‘laning — sizga tez orada javob beramiz."
 }

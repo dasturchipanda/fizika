@@ -1,18 +1,11 @@
 {
-  "greeting": "test english",
-  "edit-profile": "Edit profile",
-  "payment": "Payments",
-  "news": "News",
-  "lang": "Language",
-  "theme": "Theme",
-  "checkmark": "How to get checkmark",
-  "support": "Write to Admin",
-  "contact": "Contact Redder",
-  "logout": "Logout",
-  "cargo": "Cargo",
-  "cars": "Cars",
-  "myCargo": "My Cargo",
-  "myCar": "My Car",
-  "profile": "Profile",
-  "change": "Change"
+  "asosiy": "Home",
+  "nazariy": "Theory Lessons",
+  "amaliy": "Practical Exercises",
+  "nazorat": "Assessment Work",
+  "lider": "Top Students",
+  "motiv": "Physics: A journey of logic, experiments, and discovery.",
+  "motiv_text": "Enhancing educational tools that help university students develop strong social and digital skills.",
+  "contact": "Contact Us",
+  "conatct_text": "Have any questions or suggestions? Reach out through the form below — we’ll respond as soon as possible."
 }

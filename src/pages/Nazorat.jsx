@@ -1,7 +1,7 @@
 // src/TestPage.jsx
 import React, { useState, useEffect } from "react";
 import * as jwt_decode from "jwt-decode";
-import axios from "axios";
+import api from "../components/axios.jsx";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -12,8 +12,8 @@ const TestPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:9000/api/grouptests")
+    api
+      .get("/grouptests")
       .then((res) => {
         setTestData(res.data);
         setLoading(false);

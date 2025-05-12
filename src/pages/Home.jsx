@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./assets.css"
+import "./assets.css";
 import { CiLocationOn } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineMail } from "react-icons/md";
 import { IoMdTime } from "react-icons/io";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t } = useTranslation();
+
   const videoId = "rdOw_VSXbU4?si=-V-0vrpK5V3341MW";
 
   return (
@@ -29,20 +32,14 @@ const Home = () => {
               className="col-lg-6  d-flex flex-column justify-content-center text-center text-md-start"
               data-aos="fade-in"
             >
-              <h2 className="pb-2">
-                Fizika: tafakkur, tajriba va kashfiyot sari yo‘l.
-              </h2>
-              <p>
-                Oliy ta’lim muassasalari talabalari uchun ijtimoiy va axborot
-                kompetensiyalarini rivojlantirishga xizmat qiluvchi dasturiy
-                ta’minotni yanada takomillashtirish.
-              </p>
+              <h2 className="pb-2">{t("motiv")}</h2>
+              <p>{t("motiv_text")}</p>
               <div className="d-flex mt-4 justify-content-center justify-content-md-start">
                 <Link to={"/nazariy"} className="download-btn">
-                  <span>Nazariy Darslar</span>
+                  <span>{t("nazariy")}</span>
                 </Link>
                 <Link to={"/amaliy"} className="download-btn">
-                  <span>Amaliy Darslar</span>
+                  <span>{t("amaliy")}</span>
                 </Link>
               </div>
             </div>
@@ -155,9 +152,9 @@ const Home = () => {
 
       <section id="contact" class="contact section">
         <div class="container section-title text-center" data-aos="fade-up">
-          <h2 className="pt-5 fw-bold">Bo'g'lanish uchun malumotlar</h2>
+          <h2 className="pt-5 fw-bold">{t("contact")}</h2>
           <p>
-            Savollaringiz bormi? Takliflaringizni eshitishga tayyormiz. Quyidagi forma orqali biz bilan bog‘laning – sizga tez orada javob beramiz.
+            {t("conatct_text")}
           </p>
         </div>
 
@@ -167,7 +164,7 @@ const Home = () => {
               <div class="row gy-4">
                 <div class="col-md-6">
                   <div class="info-item" data-aos="fade" data-aos-delay="200">
-                    <CiLocationOn className="fs-2"/>
+                    <CiLocationOn className="fs-2" />
                     <h3>Address</h3>
                     <p>Insitut Nomi</p>
                     <p>Toshkent viloyati, chirchiq</p>
@@ -176,7 +173,7 @@ const Home = () => {
 
                 <div class="col-md-6">
                   <div class="info-item" data-aos="fade" data-aos-delay="300">
-                    <IoCallOutline className="fs-2"/>
+                    <IoCallOutline className="fs-2" />
                     <h3>Telefon raqamlar</h3>
                     <p>+998 99 123 33 44</p>
                     <p>+998 99 123 44 33</p>
@@ -185,7 +182,7 @@ const Home = () => {
 
                 <div class="col-md-6">
                   <div class="info-item" data-aos="fade" data-aos-delay="400">
-                    <MdOutlineMail className="fs-2"/>
+                    <MdOutlineMail className="fs-2" />
                     <h3>Email</h3>
                     <p>info@example.com</p>
                     <p>contact@example.com</p>
@@ -194,7 +191,7 @@ const Home = () => {
 
                 <div class="col-md-6">
                   <div class="info-item" data-aos="fade" data-aos-delay="500">
-                    <IoMdTime className="fs-2"/>
+                    <IoMdTime className="fs-2" />
                     <h3>Ochiq kunlar</h3>
                     <p>Dushanba - Juma</p>
                     <p>8:00 - 17:00</p>
@@ -253,7 +250,6 @@ const Home = () => {
                   </div>
 
                   <div class="col-12 text-center">
-
                     <button type="submit">Send Message</button>
                   </div>
                 </div>

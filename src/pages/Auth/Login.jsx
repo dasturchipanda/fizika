@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import * as jwt_decode from "jwt-decode";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import "./auth.css";
+import api from "../../components/axios.jsx";
 
 const Login = () => {
   const [user_email, setUser_email] = useState("");
@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:9000/api/login", {
+      const response = await api.post("/login", {
         user_email: user_email,
         user_password: user_password,
       });

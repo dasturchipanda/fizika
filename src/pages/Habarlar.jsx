@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from "../components/axios.jsx";
+import API_BASE_URL from '../components/base.jsx';
 
 const Habarlar = () => {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:9000/api/news')
+    api.get('/news')
       .then(response => setNews(response.data))
       .catch(err => console.error("Error fetching news", err));
   }, []);
@@ -23,7 +24,7 @@ const Habarlar = () => {
               <div className="card h-100 shadow-sm">
                 {article.news_image && (
                   <img
-                    src={`http://localhost:9000${article.news_image}`}
+                    src={`${API_BASE_URL}${article.news_image}`}
                     className="card-img-top"
                     alt={article.news_title}
                     style={{ height: '200px', objectFit: 'cover' }}

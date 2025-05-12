@@ -1,12 +1,13 @@
 // AmaliyList.jsx
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from "../components/axios.jsx";
+import API_BASE_URL from '../components/base.jsx';
 
 const AmaliyList = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:9000/api/amaliy')
+    api.get('/amaliy')
       .then((res) => {
         setData(res.data);
       })
@@ -97,7 +98,7 @@ const AmaliyList = () => {
           <strong>Sarlavha:</strong> {item.amaliy_title}
         </p>
         <a
-          href={`http://localhost:9000${item.amaliy_file}`}
+          href={`${API_BASE_URL}${item.amaliy_file}`}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-outline-primary btn-sm"

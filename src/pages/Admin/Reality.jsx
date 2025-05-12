@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../components/axios.jsx';
+
 
 const Reality = () => {
   const [title, setTitle] = useState('');
@@ -8,7 +9,7 @@ const Reality = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:9000/api/amaliy')
+    api.get('/amaliy')
       .then((res) => {
         setData(res.data);
       })
@@ -30,7 +31,7 @@ const Reality = () => {
     formData.append('amaliy_file', file);
 
     try {
-      await axios.post('http://localhost:9000/api/amaliy', formData, {
+      await api.post('/amaliy', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       setMessage('✅ Muvaffaqiyatli yuklandi!');

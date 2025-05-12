@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from '../../components/axios.jsx'
 import "./admin.css";
 
 const Admin = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:9000/api/users")
+    api
+      .get("/users")
       .then((res) => setUsers(res.data))
       .catch((err) => console.error("Error fetching users:", err));
   }, []);
