@@ -34,6 +34,7 @@ const Reality = () => {
       await api.post('/amaliy', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
+      
       setMessage('✅ Muvaffaqiyatli yuklandi!');
       setTitle('');
       setFile(null);
@@ -97,7 +98,7 @@ const Reality = () => {
           <strong>Sarlavha:</strong> {item.amaliy_title}
         </p>
         <a
-          href={`http://localhost:9000${item.amaliy_file}`}
+          href={`${item.amaliy_file}`}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-outline-primary btn-sm"
