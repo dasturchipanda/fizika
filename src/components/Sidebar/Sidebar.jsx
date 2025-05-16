@@ -23,7 +23,6 @@ const Sidebar = () => {
     { path: "/admin/nazariy", label: "Nazariy darslar" },
     { path: "/admin/amaliy", label: "Amaliy darslar" },
     { path: "/admin/tests", label: "Nazrot ishlari" },
-    { path: "/admin/results", label: "results" },
   ];
 
   return (

@@ -61,7 +61,7 @@ const Navbar = () => {
                 onClick={handleLogout}
                 className="btn btn-danger mt-2 w-50"
               >
-                Chiqish
+                {t("logout")}
               </button>
             </ul>
           </nav>
@@ -103,7 +103,7 @@ const Navbar = () => {
               onClick={handleLogout}
               className="btn btn-danger d-none d-lg-block ms-2"
             >
-              Chiqish
+              {t("logout")}
             </button>
           </div>
         </div>

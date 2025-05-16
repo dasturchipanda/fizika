@@ -7,7 +7,6 @@ import Nazariy from "./pages/Nazariy";
 import Amaliy from "./pages/Amaliy";
 import Glossariy from "./pages/Glossariy";
 import Nazorat from "./pages/Nazorat";
-import Profile from "./pages/Profile";
 import NoDirect from "./pages/NoDirect";
 
 // Auth
@@ -18,7 +17,7 @@ import Home from "./pages/Home";
 import Admin from "./pages/Admin/Admin";
 import AdminLayout from "./layouts/AdminLayout";
 import Tests from "./pages/Admin/Tests";
-import Users from "./pages/Admin/users";
+import Users from "./pages/Admin/Users";
 import Expect from "./pages/Admin/Expect";
 import Reality from "./pages/Admin/Reality";
 import Habarlar from "./pages/Habarlar";
@@ -74,14 +73,6 @@ const App = () => {
               }
             />
             <Route
-              path="profile"
-              element={
-                <PrivateRoute>
-                  <Profile />
-                </PrivateRoute>
-              }
-            />
-            <Route
               path="news"
               element={
                 <PrivateRoute>
@@ -100,20 +91,19 @@ const App = () => {
           </Route>
 
           <Route path="/admin" element={<AdminLayout />}>
-            <Route
+          <Route
               index
-              path="users"
               element={
                 <AdminRoute>
-                  <Admin />
+                  <Users />
                 </AdminRoute>
               }
             />
             <Route
-              path="results"
+              path="users"
               element={
                 <AdminRoute>
-                  <Users />
+                  <Admin />
                 </AdminRoute>
               }
             />

@@ -11,6 +11,12 @@ const TestPage = () => {
   const [testData, setTestData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const formatTime = (seconds) => {
+    const m = Math.floor(seconds / 60);
+    const s = seconds % 60;
+    return `${m}:${s < 10 ? "0" : ""}${s}`;
+  };
+
   useEffect(() => {
     api
       .get("/grouptests")
@@ -40,6 +46,16 @@ const TestPage = () => {
     setResult(null);
   };
 
+  const handleRestart = () => {
+    setResult(null);
+    setSelectedSubject("");
+    setAnswers({});
+    setStarted(false);
+    setTimeLeft(3600);
+    setCurrentQuestions([]);
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     if (started && timeLeft > 0) {
       const timer = setInterval(() => setTimeLeft((prev) => prev - 1), 1000);
@@ -59,12 +75,34 @@ const TestPage = () => {
     });
     setResult(score);
     setStarted(false);
-  };
 
-  const formatTime = (seconds) => {
-    const m = Math.floor(seconds / 60);
-    const s = seconds % 60;
-    return `${m}:${s < 10 ? "0" : ""}${s}`;
+    const token = localStorage.getItem("token");
+    if (token) {
+      const decoded = jwt_decode.jwtDecode(token); // user_id olish
+      const user_id = decoded.id;
+
+      api
+        .post(
+          "/results",
+          {
+            user_id,
+            subject_name: selectedSubject,
+            score,
+            total: currentQuestions.length,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then(() => {
+          console.log("✅ Natija saqlandi");
+        })
+        .catch((err) => {
+          console.error("❌ Natijani saqlashda xatolik:", err);
+        });
+    }
   };
 
   if (loading) return <p>Loading...</p>;
@@ -75,43 +113,42 @@ const TestPage = () => {
 
       {!started && result === null && (
         <>
-          <div class="container">
-            <div class="row ">
-              <div class="preview-card">
-                <div class="preview-card__wrp">
-                  <div class="preview-card__item">
-                    <div class="preview-card__img">
+          <div className="container">
+            <div className="row ">
+              <div className="preview-card">
+                <div className="preview-card__wrp">
+                  <div className="preview-card__item">
+                    <div className="preview-card__img">
                       <img src="img/test-img.png" alt="Test" />
                     </div>
-                    <div class="preview-card__content">
-                      <div class="preview-card__title">
+                    <div className="preview-card__content">
+                      <div className="preview-card__title">
                         Mavzulashtirilgan Testlar
                       </div>
-                        <select
-                          value={selectedSubject}
-                          onChange={(e) => setSelectedSubject(e.target.value)}
-                          className="form-select m-auto w-75"
-                        >
-                          <option value="">Fan tanlang</option>
-                          {testData.map((s, idx) => (
-                            <option key={idx} value={s.subject_name}>
-                              {s.subject_name}
-                            </option>
-                          ))}
-                        </select>
-                      <span class="preview-card__code mt-2">
+                      <select
+                        value={selectedSubject}
+                        onChange={(e) => setSelectedSubject(e.target.value)}
+                        className="form-select m-auto w-75"
+                      >
+                        <option value="">Fan tanlang</option>
+                        {testData.map((s, idx) => (
+                          <option key={idx} value={s.subject_name}>
+                            {s.subject_name}
+                          </option>
+                        ))}
+                      </select>
+                      <span className="preview-card__code mt-2">
                         Agarda testlarda boyich muammo yoki xatoliklar yuzaga
                         kelsa iltimos <Link to={"support"}>Support</Link> bilan
                         bog'laning{" "}
                       </span>
-                      <a
-                        href="#"
-                        class="preview-card__button"
+                      <button
+                        className="preview-card__button"
                         disabled={!selectedSubject}
                         onClick={handleStart}
                       >
                         Boshlash
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -214,7 +251,10 @@ const TestPage = () => {
               }}
             />
           </div>
-          <button className="btn bg-secondary text-light mt-2">
+          <button
+            className="btn bg-secondary text-light mt-2"
+            onClick={handleRestart}
+          >
             Qaytadan boshlash
           </button>
         </div>

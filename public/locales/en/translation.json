@@ -7,5 +7,21 @@
   "motiv": "Physics: A journey of logic, experiments, and discovery.",
   "motiv_text": "Enhancing educational tools that help university students develop strong social and digital skills.",
   "contact": "Contact Us",
-  "conatct_text": "Have any questions or suggestions? Reach out through the form below — we’ll respond as soon as possible."
+  "conatct_text": "Have any questions or suggestions? Reach out through the form below — we’ll respond as soon as possible.",
+  "logout": "Logout",
+  "news": "Latest News",
+  "news_msg": "No news available",
+  "maqsad": "Objective",
+  "maqsad_text": "To develop students' social and informational competence, apply theoretical knowledge in practice, and build and strengthen skills in effectively using modern software tools.",
+  "bajarish": "Procedure",
+  "bajarish_text1": "Familiarize yourself with the topic of the session.",
+  "bajarish_text2": "Launch the necessary software tools.",
+  "bajarish_text3": "Complete the tasks step by step.",
+  "bajarish_text4": "Analyze the results and draw conclusions.",
+  "yoriqnoma": "Instructions",
+  "yoriqnoma_text": "Download the instructions above and follow them in the specified sequence to complete the practical task. Make sure to understand each step clearly and strive to complete the task successfully.",
+  "vazifa": "Task",
+  "v_txt1": "To strengthen students’ skills in using software tools.",
+  "v_txt2": "To ensure the application of acquired knowledge in practical processes.",
+  "yuklash": "Download"
 }

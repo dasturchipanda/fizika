@@ -7,5 +7,21 @@
   "motiv": "Fizika: tafakkur, tajriba va kashfiyot yo‘li.",
   "motiv_text": "Oliy ta'lim muassasalari talabalari uchun ijtimoiy va axborot kompetensiyalarini rivojlantirishga xizmat qiluvchi dasturiy ta'minotni yanada takomillashtirish.",
   "contact": "Biz bilan bog‘laning",
-  "conatct_text": "Savollaringiz bormi? Takliflaringizni eshitishga tayyormiz. Quyidagi shakl orqali bog‘laning — sizga tez orada javob beramiz."
+  "conatct_text": "Savollaringiz bormi? Takliflaringizni eshitishga tayyormiz. Quyidagi shakl orqali bog‘laning — sizga tez orada javob beramiz.",
+  "logout": "Chiqish",
+  "news": "Eng songgi Yangiliklar",
+  "news_msg": "Yangiliklar mavjud emas",
+  "maqsad": "Maqsad",
+  "maqsad_text": "Talabalarning ijtimoiy-axborot kompetentligini rivojlantirish jarayonida nazariy bilimlarni amaliyotda qo‘llash, zamonaviy dasturiy ta’minot vositalaridan samarali foydalanish ko‘nikmalarini shakllantirish va mustahkamlash.",
+  "bajarish": "Bajarish tartibi",
+  "bajarish_text1": "Mashg‘ulot mavzusi bilan tanishish.",
+  "bajarish_text2": "Kerakli dasturiy vositalarni ishga tushirish.",
+  "bajarish_text3": "Topshiriqlarni bosqichma-bosqich bajarish.",
+  "bajarish_text4": "Natijalarni tahlil qilib, xulosa chiqarish.",
+  "yoriqnoma": "Yo‘riqnoma",
+  "yoriqnoma_text": "Amaliy mashg‘ulotni bajarish uchun yuqoridagi ko‘rsatmalarni yuklab oling va ularni ko‘rsatilgan ketma-ketlikda bajaring. Har bir bosqichni aniq tushunib, amaliyotni muvaffaqiyatli bajarishga harakat qiling.",
+  "vazifa": "Vazifasi",
+  "v_txt1": "Talabalarning dasturiy vositalardan foydalanish bo‘yicha ko‘nikmalarini mustahkamlash.",
+  "v_txt2": "Olingan bilimlarni amaliy jarayonda qo‘llashni ta’minlash.",
+  "yuklash": "Yuklab olish"
 }
